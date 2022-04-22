@@ -22,6 +22,11 @@ public class HumanMain {
 		
 		//human6 객체 ,정확한 순서와 타입이 맞아야 한다.
 		Human human6 = new Human("고지훈",20,"인천","남");
+		System.out.println("");
+		System.out.println(human6.name);
+		System.out.println(human6.age);
+		System.out.println(human6.local);
+		System.out.println(human6.gender);
 	}
 
 }

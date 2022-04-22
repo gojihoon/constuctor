@@ -18,6 +18,11 @@ public class Human {
 		System.out.println(age);
 		System.out.println(local);
 		System.out.println(gender);
+	// 매개변수로 전달받은 값을 필드에 저장
+	this.name = name;
+	this.age = age;
+	this.local = local;
+	this.gender = gender;
 	}
 
 	// 매개변수가 있는 생성자(여러개 가능, 타입이 같게는 여러개 불가
