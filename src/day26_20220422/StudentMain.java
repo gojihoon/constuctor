@@ -17,7 +17,7 @@ public class StudentMain {
 			
 		System.out.println("");
 		//매개변수 4개인 생성자를 호출한 객체
-		StudentClass student3 =new StudentClass("신입","컴퓨터",2022,20);
+		StudentClass student3 =new StudentClass("신입","티비라구요",2022,20);
 			student3.studentPring();
 	}
 
