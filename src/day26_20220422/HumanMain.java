@@ -28,5 +28,5 @@ public class HumanMain {
 		System.out.println(human6.local);
 		System.out.println(human6.gender);
 	}
-
+	
 }
