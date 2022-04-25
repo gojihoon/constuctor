@@ -71,6 +71,8 @@ public class Calculator {
 	  * 	:int 값은 단순 출력만.
 	  */
 	 String add6(String a,int b) {
+		 //System.out.println(b);
+		 //return a;
 		 String c=a+"!!"+String.valueOf(b);
 		 return c;
 	 }
