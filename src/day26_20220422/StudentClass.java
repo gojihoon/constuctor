@@ -28,4 +28,5 @@ public class StudentClass {
 		System.out.println(this.studentNumber);
 		System.out.println(this.age);
 	}
+	
 }
