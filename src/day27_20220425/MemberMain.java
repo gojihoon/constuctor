@@ -21,9 +21,7 @@ public class MemberMain {
 		Scanner sc = new Scanner(System.in);
 		int memberNum=0;
 		String id= "";
-		String id1="";
 		String pw = "";
-		String pw1="";
 		String name = "";
 		String phoneNum= "";
 		int age=0;
@@ -51,10 +49,10 @@ public class MemberMain {
 			} 
 			else if (join == 2) {
 				System.out.print("아이디: ");
-				id1=sc.next();
+				id=sc.next();
 				System.out.print("비밀번호: ");
-				pw1=sc.next();
-				boolean result = member.memberLogin(id1, pw1);
+				pw=sc.next();
+				boolean result = member.memberLogin(id, pw);
 				if (result == true) {
 					System.out.println("로그인 성공!");
 				} else if (result == false) {

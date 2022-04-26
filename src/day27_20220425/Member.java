@@ -1,12 +1,13 @@
 package day27_20220425;
 
 public class Member {
-		int memberNum;
+		int memberNum; //변수이름:소속도 같이 써주는게 좋다. member+Id,member+Pw,member+Name
 		String id;
 		String pw;
 		String name;
 		String phoneNum;
 		int age;
+		// 모든 필드를 매개변수로 하는 생성자
 		void save(int memeberNum,String id,String pw,String name,String phoneNum,int age) {
 			this.memberNum=memeberNum;
 			this.id=id;
@@ -15,8 +16,8 @@ public class Member {
 			this.phoneNum=phoneNum;
 			this.age=age;
 		}
-		boolean memberLogin(String id1,String pw1){
-			if(id.equals(id1) && pw.equals(pw1)) {
+		boolean memberLogin(String id,String pw){
+			if(this.id.equals(id) && this.pw.equals(pw)) {
 				return true;
 			}
 			else {
