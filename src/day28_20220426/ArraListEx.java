@@ -13,6 +13,7 @@ public class ArraListEx {
 		list1.add("hihi");
 		list1.add(1,"kkkk");
 		list1.add(1,"oooo");//add(특정 인덱스번호,담고자하는 내용) 값을 덮어쓰지 않고 밀어냄
+		System.out.println("-----------");
 		//꺼내기: get 메서드 호출
 		System.out.println(list1.get(0)); //get(index값)
 		System.out.println(list1.get(1)); 

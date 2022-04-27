@@ -34,15 +34,22 @@ public class StudentMain {
 		System.out.println(student2.getId());
 		System.out.println(student2.getStudentName());
 		System.out.println(student2.getStudentMajor());
+		System.out.println("---------------");
 		//Student 객체를 담기 위한 list
 		List<Student> studentList= new ArrayList<>();
 		studentList.add(student2);
-		//get
-		System.out.println(studentList.get(0));
+// 배열로 표현
+		Student[] stuArray = new Student[10]; //Student객체를 담는 배열, 모든 클래스는 데이터 타입이 될 수 있다.(Student타입)
+		stuArray[0]= student1;
+		
+		int[] intArray = new int[10]; 
+//     	
+		//get  //인스터스가 클래스 메서드를 사용하는 문법과 똑같다. studentList.get(0)=student2, get은 문법 0은 studentList의 index 0번 
+		System.out.println("객체출력 "+ student2); //주소값이 밑에 출력문과 같다 
+		System.out.println("리스트 객체만 출력 "+studentList.get(0)); //이것을 출력하면 get(0)=student2의 주소값이 나온다. 
 		// 0번 인덱스에 담긴 Student 객체의 id값을 출력한다면
 		System.out.println(studentList.get(0).getId());
-		System.out.println("--------------"
-				+ "");
+		System.out.println("--------------");
 		Student student3 = new Student();
 		student3.setId(3L);
 		student3.setStudentNumber("999999");

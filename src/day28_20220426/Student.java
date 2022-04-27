@@ -36,5 +36,10 @@ public class Student {
 	public void setStudentMajor(String studentMajor) {
 		this.studentMajor = studentMajor;
 	}
-
+	@Override
+	public String toString() { //toString 이라는 이름의 메서드, 리턴타입은 String //주소값 대신 실제 객체가 가지는 값들을 출력함 //Debug할 때
+		return "Student [id=" + id + ", studentNumber=" + studentNumber + ", studentName=" + studentName
+				+ ", studentMajor=" + studentMajor + "]";
+	}
+	
 }
