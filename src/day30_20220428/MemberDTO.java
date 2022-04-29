@@ -1,18 +1,18 @@
 package day30_20220428;
 
 public class MemberDTO {
-	int id = 0; // 관리번호
-	String memberId;
-	String memberPassword;
-	String memberName;
-	int memberAge;
-	String memberMobile; // 전화번호
+	private Long id; // 관리번호
+	private String memberId;
+	private String memberPassword;
+	private String memberName;
+	private int memberAge;
+	private String memberMobile; // 전화번호
 
 	MemberDTO() {
 
 	}
 
-	public MemberDTO(int id, String memberId, String memberPassword, String memberName, int memberAge,
+	public MemberDTO(Long id, String memberId, String memberPassword, String memberName, int memberAge,
 			String memberMobile) {
 		this.id = id;
 		this.memberId = memberId;
@@ -22,11 +22,11 @@ public class MemberDTO {
 		this.memberMobile = memberMobile;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

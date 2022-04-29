@@ -7,9 +7,15 @@ public class MemberRepository {
 	boolean result = false;
 
 	boolean sign_up(MemberDTO member) {
-		memberList.add(member);
-		result = true;
-		return result;
+//		memberList.add(member);
+//		HashSet<MemberDTO> hashSet = new HashSet<>();
+//		for(MemberDTO m: memberList) {
+//			System.out.println();
+//			hashSet.add(m);
+//		}
+//		result = true;
+//		return result;
+		return memberList.add(member); //add가 boolean 타입이라 추가를 하고 추가가 되면 true를 반환 해준다.
 	}
 
 	boolean login(String memberId, String memberPassword) {
@@ -50,6 +56,7 @@ public class MemberRepository {
 	}
 
 	List<MemberDTO> update(int id, String memberMobile) {
+	
 		for (int i = 0; i < memberList.size(); i++) {
 			if (id == memberList.get(i).getId()) {
 				memberList.get(i).setMemberMobile(memberMobile);
