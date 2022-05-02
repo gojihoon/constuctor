@@ -5,25 +5,29 @@ import java.util.*;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int H = 0;
-		int M = 0;
-		int r = 0;
-		H = sc.nextInt();
-		M = sc.nextInt();
-		if (0 <= H && H <= 23 && 0 <= M && M <= 59) {
-			r = M - 45;
-			if (r >= 0) {
-				System.out.println(H + " " + r);
-			} else if (r < 0 && H != 0) {
-				M = 60 - (-r);
-				H -= 1;
-				System.out.println(H + " " + M);
-			} else if (r < 0 && H == 0) {
-				M = 60 - (-r);
-				H = 23;
-				System.out.println(H + " " + M);
+		int A = 0;
+		int B = 0;
+		int C = 0;
+		A = sc.nextInt();
+		B = sc.nextInt();
+		C = sc.nextInt();
+		int A1 = A + (B + C) / 60;
+		int B1 = 0;
+		if (0 <= A && A <= 23 && 0 <= B && B <= 59 && 0 <= C && C <= 1000) {
+			if ((B + C) / 60 > 0) {
+				if (A1 <= 23) {
+					A = A1;
+					if (A1 == 24) {
+						A1 = 0;
+					} 
+				} else if (A1 > 23) {
+					A = A1 - 24;
+				}
+			} else if ((B + C) / 60 == 0) {
+				B1 = B + C;
 			}
 		}
+		System.out.println(A1 + " " + B1);
 
 		sc.close();
 	}

@@ -9,30 +9,24 @@ public class PostService {
 	static PostRepository pr = new PostRepository();
 	static PostDTO post = new PostDTO();
 	static List<PostDTO> postList = new ArrayList<>();
-	LocalDateTime dateTime = LocalDateTime.now();
-	String time = dateTime.format(DateTimeFormatter.ofPattern("yyyy년 MM월 HH:mm:ss"));
-	boolean result = false;
-	Long id = 0L;
-	String postTitle = "";
-	String postWriter = "";
-	String postPass = "";
-	String postContents = "";
-	Long postHits = 0L;
-	String postDate = time;
-
-	void signUp() { // 1로 글등록하고 다른데 선택하고 다시 1로 돌아오면 글제목이 스킵됨
+	static Long id = 0L;
+	void signUp() { 
 		System.out.print("글제목: ");
-		postTitle = sc.nextLine();
+		String postTitle = sc.nextLine();
 		System.out.print("작성자: ");
-		postWriter = sc.next();
+		String postWriter = sc.next();
 		System.out.print("비밀번호: ");
-		postPass = sc.next();
+		String postPass = sc.next();
 		System.out.print("내용: ");
-		postContents = sc.nextLine();
-		postContents = sc.nextLine();
-		post = new PostDTO(++id, postTitle, postWriter, postPass, postContents, postHits, postDate);
-		result = pr.signUp(post);
-		if (result == true) {
+		sc.nextLine();
+		String postContents = sc.nextLine();
+
+		LocalDateTime dateTime = LocalDateTime.now();
+		String postDate = dateTime.format(DateTimeFormatter.ofPattern("yyyy년 MM월 HH:mm:ss"));
+
+		post = new PostDTO(++id, postTitle, postWriter, postPass, postContents, 0L, postDate);
+		boolean result = pr.signUp(post); //false를 쓰지 않아도 add가 되면 true 안되면 false를 준다.
+		if (result) { // ==true라고 안해도 true라면 실행되고 false라면 실패한다.
 			System.out.println("글이 작성되었습니다.");
 		} else {
 			System.out.println("글 작성에 실패하였습니다.");
@@ -55,19 +49,19 @@ public class PostService {
 		} else {
 			System.out.println("조회결과가 없습니다.!!");
 		}
+		sc.nextLine();
 	}
 
 	void update() {
-		result = false;
 		System.out.print("글번호: ");
 		id = sc.nextLong();
 		System.out.print("비밀번호: ");
-		postPass = sc.next();
+		String postPass = sc.next();
+		sc.nextLine();
 		Long postId = pr.postCheck(id, postPass); // postPass가 틀렸더라도 id값을 리턴해줘서 수정이 가능해짐.>>고침
 		if (postId != null) {
 			System.out.print("수정할 내용: ");
-			postContents = sc.nextLine();
-			postContents = sc.nextLine();
+			String postContents = sc.nextLine();
 			postList = pr.update(id, postContents);
 			PostDTO post = pr.findById(id);
 			System.out.println(post);
@@ -79,26 +73,31 @@ public class PostService {
 
 	void wirterPostList() {
 		System.out.print("작성자: ");
-		postWriter = sc.next();
+		String postWriter = sc.next();
 		List<PostDTO> wirterList = pr.wirterPostList(postWriter);
+		if(wirterList.size() > 0) {
 		for (PostDTO p : wirterList) {
 			System.out.println(p);
 		}
+		} else {
+			System.out.println("검색결과가 없습니다.");
+		}
+		sc.nextLine();
 	}
 
 	void delete() {
 		System.out.print("글번호: ");
 		id = sc.nextLong();
 		System.out.print("비밀번호: ");
-		postPass = sc.next();
+		String postPass = sc.next();
 		Long postId = pr.postCheck(id, postPass);
-		postList = pr.delete(id);
 		if (postId != null) {
-			postList = pr.update(id, postContents);
+			postList = pr.delete(id);
 			postList();
 			System.out.println("글이 삭제되었습니다.");
 		} else {
 			System.out.println("글번호와 비밀번호가 일치하지 않습니다.");
 		}
+		sc.nextLine();
 	}
 }

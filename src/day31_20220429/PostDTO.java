@@ -6,7 +6,7 @@ public class PostDTO {
 	private String postWriter;
 	private String postPass;
 	private String postContents;
-	private Long postHits;
+	private Long postHits = 0L;
 	private String postDate;
 
 	public PostDTO() {
